@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using zichub.Models;
 namespace zichub.ViewModels
 {
@@ -9,5 +10,12 @@ namespace zichub.ViewModels
         public string Time { get; set; }
         public byte Genre { get; set; }
         public IEnumerable<Genre> Genres { get; set; }
+        public DateTime DateTime
+        {
+            get
+            {
+                return DateTime.Parse(string.Format("{0} {1}", Date, Time));
+            }
+        }
     }
 }
